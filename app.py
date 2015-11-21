@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template, request
-import time
+import os, time
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -18,4 +18,7 @@ def emotion():
 		return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
+
+    port = int(os.environ.get('PORT', 5000)) #locally runs on 5000, heroku assigns own port
+	app.run(host='0.0.0.0', port=port)
