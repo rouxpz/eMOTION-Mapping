@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body onload="getLocation()">
+
+	<form method="POST" enctype="multipart/form-data" role="form">
+	<h2>How are you feeling, right at this second?</h2>
+	<textarea name="feeling" id="feeling" rows="10" cols="50"></textarea><br>
+	<input type="hidden" name="latitude" id="latitude">
+	<input type="hidden" name="longitude" id="longitude"><br>
+	<input class="button" type="submit" value="Upload" onclick="saveData()">
+</form>
+
+	<script src="static/emotiontracker.js" type="text/javascript"></script>
+</body>
+</html>
