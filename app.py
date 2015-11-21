@@ -18,7 +18,6 @@ def emotion():
 		return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=False)
-
+    app.debug = False
     port = int(os.environ.get('PORT', 5000)) #locally runs on 5000, heroku assigns own port
 	app.run(host='0.0.0.0', port=port)
