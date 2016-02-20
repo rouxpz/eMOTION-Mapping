@@ -1,14 +1,17 @@
 body {
-	width:80%;
+	width:90%;
 	position:relative;
 	background-color: #5bc2d6;
 	margin:25px;
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
+strong {
+	font-weight: 400;
+}
+
 .homelink {
 	color:#ff7969;
-	font-family: Helvetica;
 	font-size: 30px;
 	text-decoration: none;
 }
@@ -19,7 +22,6 @@ body {
 
 .infolink {
 	color:#ff7969;
-
 	font-size: 15px;
 	text-decoration: none;
 }
@@ -63,7 +65,6 @@ p {
 	display:inline-block;
 	cursor:pointer;
 	color:#666666;
-
 	font-size:15px;
 	font-weight:bold;
 	padding:6px 24px;
