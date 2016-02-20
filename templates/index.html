@@ -2,18 +2,19 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="static/style.css">
+	<link rel="stylesheet" type="text/css" href="static/css/submit.css">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body onload="getLocation()">
 
 	<form method="POST" enctype="multipart/form-data" role="form">
-	<h2>How are you feeling, right at this second?</h2>
-	<textarea name="feeling" id="feeling" rows="10" cols="50"></textarea><br>
-	<input type="hidden" name="latitude" id="latitude">
-	<input type="hidden" name="longitude" id="longitude"><br>
-	<input type="hidden" name="timestamp" id="timestamp"><br>
-	<input class="button" type="submit" value="Share" onclick="saveData()">
-</form>
+		<h2>How are you feeling, right at this second?</h2>
+		<textarea name="feeling" id="feeling" rows="10" cols="50"></textarea><br>
+		<input type="hidden" name="latitude" id="latitude">
+		<input type="hidden" name="longitude" id="longitude"><br>
+		<input type="hidden" name="timestamp" id="timestamp"><br>
+		<input class="button" type="submit" value="Share" onclick="saveData()">
+	</form>
 
 	<script src="static/emotiontracker.js" type="text/javascript"></script>
 </body>

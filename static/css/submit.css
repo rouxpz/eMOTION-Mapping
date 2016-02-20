@@ -1,8 +1,9 @@
 body {
-	width:320px;
+	width:80%;
 	position:relative;
 	background-color: #5bc2d6;
 	margin:25px;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 .homelink {
@@ -18,7 +19,7 @@ body {
 
 .infolink {
 	color:#ff7969;
-	font-family: Helvetica;
+
 	font-size: 15px;
 	text-decoration: none;
 }
@@ -29,20 +30,18 @@ body {
 
 h2 {
 	color:white;
-	font-family: Helvetica;
-	font-size: 50px;
+	font-size: 45px;
 }
 
 h3 {
 	color:white;
-	font-family: Helvetica;
 	font-size: 30px;
 }
 
 p {
 	color:white;
-	font-family: Helvetica;
 	font-size: 15px;
+	font-weight: 300;
 }
 
 .button {
@@ -57,14 +56,14 @@ p {
 	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
 	background-color:#ffffff;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
 	border-radius:0px;
 	border:1px solid #dcdcdc;
 	display:inline-block;
 	cursor:pointer;
 	color:#666666;
-	font-family:Helvetica;
+
 	font-size:15px;
 	font-weight:bold;
 	padding:6px 24px;
@@ -84,4 +83,16 @@ p {
 .button:active {
 	position:relative;
 	top:1px;
+}
+
+#smallerheading {
+	color: white;
+	font-size: 25px;
+	font-weight: 400;
+}
+
+#biggerheading {
+	color:white;
+	font-size: 35px;
+	font-weight:700;
 }

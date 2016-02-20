@@ -2,9 +2,19 @@ from flask import Flask
 from flask import render_template, request
 import os, time
 
+location = 'philly'
+
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
+def map():
+	return render_template("map.html")
+
+@app.route('/' + location)
+def instructions():
+	return render_template('instructions.html')
+
+@app.route('/submit', methods=['GET', 'POST'])
 def emotion():
 	if request.method == 'POST':
 		timestamp = str(time.time())

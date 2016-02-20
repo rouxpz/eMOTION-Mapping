@@ -1,0 +1,73 @@
+body {
+	margin: 0px !important;
+}
+
+.leaflet-container {
+  cursor: crosshair !important;
+}
+
+#name {
+	text-decoration: none;
+	color:#cccccc;
+}
+
+#notName {
+	font-weight: 300px;
+}
+
+#map {
+	height: 100vh;
+	margin: 0px;
+}
+
+.pagecontent {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+#heading {
+	background-color: #60C2D4;
+	font-weight: 700;
+	font-size: 40px;
+	position: fixed;
+	right: 10px;
+	top: 10px;
+	padding: 10px;
+	width: 30%;
+	text-align: center;
+	color: white;
+}
+
+#heading:hover {
+	background-color: #438794;
+	cursor: pointer;
+}
+
+#instructions {
+	display: none;
+	position: fixed;
+	right: 10px;
+	top: 90px;
+	background-color: #dff2f6;
+	max-width: 30%;
+	padding: 10px;
+	color: #264d54;
+	font-weight: 300;
+}
+
+#credits {
+	background-color: #264d54;
+	font-weight: 300;
+	font-size: 15px;
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: white;
+}
+
+#credits:hover {
+	background-color: #517076;
+}
