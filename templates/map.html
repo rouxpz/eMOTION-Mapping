@@ -11,6 +11,24 @@
 
 <body>
 
+	<script>
+		var totalEmotions = [];
+		// totalEmotions.push("test");
+	</script>
+
+	{% for d in mapData %}
+		<script>
+			var lat = {{d.latitude}};
+			var lon = {{d.longitude}};
+			var feeling = {{d.feeling.encode('utf-8')}};
+			var hexcode = "#cccccc";
+			// var feeling = decodeURIComponent(escape({{d.feeling}}));
+			// var hexcode = {{d.hexcode}};
+
+			totalEmotions.push([feeling, lat, lon, hexcode]);
+		</script>
+	{% endfor %}
+
 	<div id="map"></div>
 	<div class="pagecontent">
 		<div id="heading">eMOTION Mapping</div>

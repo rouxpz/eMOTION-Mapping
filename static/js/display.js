@@ -3,6 +3,7 @@ $("#heading").click(function() {
 	$("#instructions").slideToggle("slow");
 });
 
+console.log(totalEmotions);
 var map = L.map('map').setView([40.7127, -72.0059], 7);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -17,13 +18,34 @@ var philly = L.latLng(39.9500, -75.1667);
 var baltimore = L.latLng(39.2833, -76.6167);
 var boston = L.latLng(42.3601, -71.0589);
 
-L.marker(nyc).addTo(map);
-L.marker(baltimore).addTo(map);
-L.marker(philly).addTo(map);
-L.marker(boston).addTo(map);
+// L.marker(baltimore).addTo(map);
+// L.marker(philly).addTo(map);
+// L.marker(boston).addTo(map);
 
 var latlngs = [[nyc, philly], [nyc, boston], [nyc, baltimore]];
+// for (var i = 0; i < latlngs.length; i++) {
+// 	var polyline = L.polyline(latlngs[i], {color: '#60d4ac'}).addTo(map);
+// }
 
-for (var i = 0; i < latlngs.length; i++) {
-	var polyline = L.polyline(latlngs[i], {color: '#60d4ac'}).addTo(map);
-}
+console.log(totalEmotions[0]);
+
+var locLat = 18.9750;
+var locLon = 72.8258;
+var loc = L.latLng(locLat, locLon);
+console.log(loc);
+// L.marker(loc).addTo(map);
+var popupContent = totalEmotions[0][0];
+console.log(popupContent);
+var m = L.circle(loc, 2500, {color: totalEmotions[0][3], fillColor: totalEmotions[0][3], fillOpacity: 0.5}).addTo(map);
+m.bindPopup(popupContent, {minWidth: '300', className: 'custom'});
+
+// for (var i = 0; i < totalEmotions; i++) {
+// 	var loc = L.latLng(totalEmotions[i][1], totalEmotions[i][2]);
+// 	var popupContent = totalEmotions[i][0];
+// 	var m = L.circle(loc,
+// 			1500, 
+// 			{color: 'red', 
+// 				fillColor: totalEmotions[i][3], fillOpacity: 0.5}
+// 		).addTo(map);
+// 	m.bindPopup(popupContent, {minWidth: '500', className: 'custom'});
+// }
