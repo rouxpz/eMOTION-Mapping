@@ -13,12 +13,24 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1Ijoicm91eHB6IiwiYSI6ImNpa3FnNzdpODAxcGx1eGt0ZjRpc200b3oifQ.KjjoT2U4IXUvMQFVRjrRWA'
 }).addTo(map);
 
+
+var greenIcon = L.icon({
+    iconUrl: 'static/js/leaflet/images/beginMarker-2x.png',
+    // shadowUrl: 'leaf-shadow.png',
+
+    iconSize:     [25, 41], // size of the icon
+    // shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [12, 41], // point of the icon which will correspond to marker's location
+    // shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [12, 0] // point from which the popup should open relative to the iconAnchor
+});
+
 var nyc = L.latLng(40.7127, -74.0059);
 var philly = L.latLng(39.9500, -75.1667);
 var baltimore = L.latLng(39.2833, -76.6167);
 var boston = L.latLng(42.3601, -71.0589);
 
-// L.marker(baltimore).addTo(map);
+L.marker(baltimore, {icon: greenIcon}).addTo(map);
 // L.marker(philly).addTo(map);
 // L.marker(boston).addTo(map);
 

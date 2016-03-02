@@ -20,6 +20,17 @@ strong {
 	color:#ffc9c3;
 }
 
+.citylink {
+	color:#ff7969;
+	font-size: 35px;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.citylink:hover {
+	color:#ffc9c3;
+}
+
 .infolink {
 	color:#ff7969;
 	font-size: 15px;

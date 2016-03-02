@@ -4,7 +4,7 @@ from datetime import datetime
 from collections import Counter
 from flask.ext.mongoengine import MongoEngine
 
-location = 'boston'
+locations = ['boston', 'baltimore', 'philly']
 emotions = []
 positive = ['joy', 'trust', 'surprise', 'anticipation']
 negative = ['fear', 'anger', 'sadness', 'disgust']
@@ -35,7 +35,7 @@ import models
 
 @app.route('/')
 def main():
-	return redirect('/' + location)
+	return redirect('/boston')
 
 @app.route('/map')
 def map():
@@ -44,12 +44,20 @@ def map():
 	}
 	return render_template("map.html", **templateData)
 
-@app.route('/' + location)
-def instructions():
-	templateData = {
-		'location' : location.capitalize()
-	}
-	return render_template('instructions.html', **templateData)
+@app.route('/<string:location>')
+def instructions(location):
+	if location in locations:
+		if location == "philly":
+			templateData = {
+				'location' : 'Philadelphia'
+			}
+		else:
+			templateData = {
+				'location' : location.capitalize()
+			}
+		return render_template('instructions.html', **templateData)
+	else:
+		return render_template('404.html')
 
 @app.route('/submit', methods=['GET', 'POST'])
 def emotion():
