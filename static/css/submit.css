@@ -11,34 +11,37 @@ strong {
 }
 
 .homelink {
-	color:#ff7969;
+	color:#ffaea5;
 	font-size: 45px;
 	text-decoration: none;
 }
 
 .homelink:hover {
-	color:#ffc9c3;
+	color:#ff7969;
 }
 
 .citylink {
-	color:#ff7969;
+	color:#ffaea5;
 	font-size: 35px;
 	text-decoration: none;
 	font-weight: 700;
 }
 
 .citylink:hover {
-	color:#ffc9c3;
+	color:#ff7969;
+}
+
+.small {
+	font-size: 12px;
 }
 
 .infolink {
-	color:#ff7969;
-	font-size: 15px;
+	color:#ffaea5;
 	text-decoration: none;
 }
 
 .infolink:hover {
-	color:#ffc9c3;
+	color:#ff7969;
 }
 
 h2 {
@@ -59,17 +62,17 @@ p {
 
 .button {
 	background: #ffbdb6;
-  	background-image: -webkit-linear-gradient(top, #ffbdb6, #ff9083);
-  	background-image: -moz-linear-gradient(top, #ffbdb6, #ff9083);
-  	background-image: -ms-linear-gradient(top, #ffbdb6, #ff9083);
-  	background-image: -o-linear-gradient(top, #ffbdb6, #ff9083);
-  	background-image: linear-gradient(to bottom, #ffbdb6, #ff9083);
+  	background-image: -webkit-linear-gradient(top, #ff9387, #ff7969);
+  	background-image: -moz-linear-gradient(top, #ff9387, #ff7969);
+  	background-image: -ms-linear-gradient(top, #ff9387, #ff7969);
+  	background-image: -o-linear-gradient(top, #ff9387, #ff7969);
+  	background-image: linear-gradient(to bottom, #ff9387, #ff7969);
 	font-weight:700;
   	color: #ffffff;
   	font-size: 20px;
   	padding: 10px 20px 10px 20px;
   	text-decoration: none;
-  	border: 1px solid #ffbdb6;
+  	border: 1px solid #ff7969;
 }
 
 .button:hover {
@@ -99,5 +102,5 @@ p {
 }
 
 .highlight {
-	color:#ff7969;
+	color:#ffaea5;
 }
