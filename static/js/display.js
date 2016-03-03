@@ -16,13 +16,17 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 var greenIcon = L.icon({
     iconUrl: 'static/js/leaflet/images/beginMarker-2x.png',
-    // shadowUrl: 'leaf-shadow.png',
 
     iconSize:     [25, 41], // size of the icon
-    // shadowSize:   [50, 64], // size of the shadow
     iconAnchor:   [12, 41], // point of the icon which will correspond to marker's location
-    // shadowAnchor: [4, 62],  // the same for the shadow
     popupAnchor:  [12, 0] // point from which the popup should open relative to the iconAnchor
+});
+
+var redIcon = L.icon({
+    iconUrl: 'static/js/leaflet/images/endMarker-2x.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [12, 0]
 });
 
 var nyc = L.latLng(40.7127, -74.0059);
@@ -30,9 +34,10 @@ var philly = L.latLng(39.9500, -75.1667);
 var baltimore = L.latLng(39.2833, -76.6167);
 var boston = L.latLng(42.3601, -71.0589);
 
-L.marker(baltimore, {icon: greenIcon}).addTo(map);
-// L.marker(philly).addTo(map);
-// L.marker(boston).addTo(map);
+L.marker(nyc, {icon: greenIcon}).addTo(map);
+L.marker(boston, {icon: redIcon}).addTo(map);
+L.marker(philly, {icon: redIcon}).addTo(map);
+L.marker(baltimore, {icon: redIcon}).addTo(map);
 
 var latlngs = [[nyc, philly], [nyc, boston], [nyc, baltimore]];
 // for (var i = 0; i < latlngs.length; i++) {
