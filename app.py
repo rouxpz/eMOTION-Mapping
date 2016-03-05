@@ -121,18 +121,20 @@ def emotion():
 
 		emo.hexcode = colorHex
 		# print emo.latitude
-		if dt.hour >= 10 and dt.hour < 15:
-			emo.save()
-			return render_template("thanks.html")
+		emo.save()
+		return render_template("thanks.html")
 
-		elif dt.hour >= 17 and dt.hour <= 22:
-			emo.save()
-			return render_template("thanks.html")
-
+	else:
+		dt = datetime.now()
+		if dt.day == 5 or dt.day == 12 or dt.day == 19:
+			if dt.hour >= 10 and dt.hour < 15:
+				return render_template('index.html')
+			elif dt.hour >= 17 and dt.hour <= 22:
+				return render_template('index.html')
+			else:
+				return render_template('nosaveallowed.html')
 		else:
-			return render_template("nosaveallowed.html")
-	else:	
-		return render_template('index.html')
+			return render_template('nosaveallowed.html')
 
 if __name__ == '__main__':
 	app.debug = False
