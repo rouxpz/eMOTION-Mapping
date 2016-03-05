@@ -68,6 +68,7 @@ def emotion():
 		feeling = emo.feeling = request.form.get('feeling')
 		emo.timestamp = dt = datetime.now()
 
+		feeling = feeling.replace(".", '').replace("!", "").replace(',', '').replace(";", '').replace('?', '').replace('"', '').replace("'", '').replace('$', '')
 		splitText = feeling.split(' ')
 		print splitText
 
