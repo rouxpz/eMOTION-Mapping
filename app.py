@@ -23,7 +23,7 @@ with open('NRC-emotion-lexicon-wordlevel-alphabetized-v0.92.txt', 'rb') as f:
 					else:
 						emotions.append([row[0], row[1]])
 
-print "Emotions loaded!"
+# print "Emotions loaded!"
 
 app = Flask(__name__)
 app.config['CSRF_ENABLED'] = False
@@ -66,7 +66,7 @@ def emotion():
 		emo.latitude = request.form.get('latitude')
 		emo.longitude = request.form.get('longitude')
 		feeling = emo.feeling = request.form.get('feeling')
-		emo.timestamp = datetime.now()
+		emo.timestamp = dt = datetime.now()
 
 		splitText = feeling.split(' ')
 		print splitText
@@ -115,22 +115,26 @@ def emotion():
 		elif b < 135:
 			b = 135
 
-		print str(r) + ", " + str(g) + ", " + str(b)
+		# print str(r) + ", " + str(g) + ", " + str(b)
 		colorHex = str('#%02x%02x%02x') % (r, g, b)
-		print colorHex
+		# print colorHex
 
 		emo.hexcode = colorHex
-		print emo.latitude
-		emo.save()
-		# txt = open('philly1021.txt', 'a')
-		# txt.write(feeling + '|' + latitude + '|' + longitude + '|' + timestamp)
-		# txt.write('\n')
-		# txt.close()
-		return render_template("thanks.html")
+		# print emo.latitude
+		if dt.hour >= 10 and dt.hour < 15:
+			emo.save()
+			return render_template("thanks.html")
+
+		elif dt.hour >= 17 and dt.hour <= 22:
+			emo.save()
+			return render_template("thanks.html")
+
+		else:
+			return render_template("nosaveallowed.html")
 	else:	
 		return render_template('index.html')
 
 if __name__ == '__main__':
-	app.debug = True
+	app.debug = False
 	port = int(os.environ.get('PORT', 5000)) #locally runs on 5000, heroku assigns own port
 	app.run(host='0.0.0.0', port=port)

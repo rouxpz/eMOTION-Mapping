@@ -13,17 +13,16 @@
 
 	<script>
 		var totalEmotions = [];
-		// totalEmotions.push("test");
+
 	</script>
 
 	{% for d in mapData %}
 		<script>
-			var lat = {{d.latitude}};
-			var lon = {{d.longitude}};
-			var feeling = {{d.feeling.encode('utf-8')}};
-			var hexcode = "#cccccc";
-			// var feeling = decodeURIComponent(escape({{d.feeling}}));
-			// var hexcode = {{d.hexcode}};
+
+			var lat = parseFloat("{{d.latitude}}");
+			var lon = parseFloat("{{d.longitude}}");
+			var hexcode = "{{d.hexcode}}";
+			var feeling = "{{d.feeling}}";
 
 			totalEmotions.push([feeling, lat, lon, hexcode]);
 		</script>
