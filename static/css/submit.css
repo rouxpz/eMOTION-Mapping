@@ -38,6 +38,7 @@ strong {
 .infolink {
 	color:#aeffb6;
 	text-decoration: none;
+	font-weight: 400;
 }
 
 .infolink:hover {
@@ -102,5 +103,5 @@ p {
 }
 
 .highlight {
-	color:#d2faff;
+	color:#aeffb6;
 }
