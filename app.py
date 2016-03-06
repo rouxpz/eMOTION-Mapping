@@ -68,6 +68,7 @@ def emotion():
 		feeling = emo.feeling = request.form.get('feeling')
 		emo.timestamp = dt = datetime.now()
 
+		feeling = feeling.lower()
 		feeling = feeling.replace(".", '').replace("!", "").replace(',', '').replace(";", '').replace('?', '').replace('"', '').replace("'", '').replace('$', '')
 		splitText = feeling.split(' ')
 		print splitText
@@ -130,7 +131,7 @@ def emotion():
 		if dt.day == 5 or dt.day == 12 or dt.day == 19:
 			if dt.hour >= 9 and dt.hour < 15:
 				return render_template('index.html')
-			elif dt.hour >= 17 and dt.hour <= 23:
+			elif dt.hour >= 17 and dt.hour < 23:
 				return render_template('index.html')
 			else:
 				return render_template('nosaveallowed.html')
