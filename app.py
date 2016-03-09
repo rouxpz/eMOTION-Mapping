@@ -35,7 +35,7 @@ import models
 
 @app.route('/')
 def main():
-	return redirect('/boston')
+	return redirect('/philly')
 
 @app.route('/map')
 def map():
@@ -129,14 +129,18 @@ def emotion():
 	else:
 		dt = datetime.now()
 		if dt.day == 5 or dt.day == 12 or dt.day == 19:
-			if dt.hour >= 9 and dt.hour < 15:
+			if dt.hour >= 9 and dt.hour < 13:
 				return render_template('index.html')
-			elif dt.hour >= 17 and dt.hour < 23:
+			elif dt.hour >= 17 and dt.hour < 22:
 				return render_template('index.html')
 			else:
 				return render_template('nosaveallowed.html')
 		else:
 			return render_template('nosaveallowed.html')
+
+# @app.route('/test')
+# def notification():
+# 	return render_template('test.html')
 
 if __name__ == '__main__':
 	app.debug = False
