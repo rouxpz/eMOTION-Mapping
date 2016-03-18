@@ -35,7 +35,7 @@ import models
 
 @app.route('/')
 def main():
-	return redirect('/philly')
+	return redirect('/baltimore')
 
 @app.route('/map')
 def map():
@@ -129,7 +129,7 @@ def emotion():
 	else:
 		dt = datetime.now()
 		if dt.day == 5 or dt.day == 12 or dt.day == 19:
-			if dt.hour >= 9 and dt.hour < 13:
+			if dt.hour >= 9 and dt.hour < 14:
 				return render_template('index.html')
 			elif dt.hour >= 17 and dt.hour < 22:
 				return render_template('index.html')
