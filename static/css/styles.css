@@ -60,6 +60,31 @@ body {
 	padding: 10px;
 	color: #264d54;
 	font-weight: 300;
+	text-align: right;
+}
+
+.filtering {
+/*	font-size: 18px;*/
+	font-weight: 400;
+	text-decoration: none;
+	color: #1E4D24;
+}
+
+.filtering:hover {
+	color: #803452;
+}
+
+#selection {
+	display: none;
+	position: fixed;
+	right: 10px;
+	bottom: 25px;
+	background-color: #dff2f6;
+	max-width: 30%;
+	padding: 10px;
+	color: #264d54;
+	font-weight: 300;
+	text-align: right;
 }
 
 #credits {
