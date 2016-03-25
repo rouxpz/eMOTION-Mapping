@@ -69,7 +69,7 @@ def emotion():
 		emo.timestamp = dt = datetime.now()
 
 		feeling = feeling.lower()
-		feeling = feeling.replace(".", '').replace("!", "").replace(',', '').replace(";", '').replace('?', '').replace('"', '').replace("'", '').replace('$', '')
+		feeling = feeling.replace(".", '').replace("!", "").replace(',', '').replace(";", '').replace('?', '').replace('"', '').replace("'", '').replace('$', '').replace('\n', '')
 		splitText = feeling.split(' ')
 		print splitText
 

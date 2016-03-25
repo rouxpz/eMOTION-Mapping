@@ -13,6 +13,14 @@
 
 	<script>
 		var totalEmotions = [];
+		$(window).resize(function() {
+			var headingSize = document.getElementById("heading").offsetHeight;
+			headingSize = parseInt(headingSize) + 20;
+			// console.log(headingSize);
+			var startInstructions = document.getElementById("instructions");
+			startInstructions.style.top = "" + headingSize +  "px";
+			// console.log(startInstructions.style.top);
+		});
 
 	</script>
 
